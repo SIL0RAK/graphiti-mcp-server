@@ -1,6 +1,6 @@
 # MCP Server Template
 
-A minimal template for running an **MCP (Model Context Protocol) server** with support for authentication, Neo4J integration, and containerization. Built using **FastMCP**.
+A minimal template for running an **MCP (Model Context Protocol) server** with support for authentication, Neo4J integration through **Graphiti** framework, and containerization. Built using **FastMCP**.
 
 
 ## 🚀 Features
@@ -9,7 +9,6 @@ A minimal template for running an **MCP (Model Context Protocol) server** with s
 * 🗄 **Neo4J database** integration
 * 🌐 **HTTP server** for MCP transport
 * 📦 **Containerization** with Docker & Docker Compose
-* 🗄 [**Migrations** for database schema management](./migrations/README.md)
 
 
 ## 🐳 Getting Started with Containers
@@ -135,3 +134,5 @@ sequenceDiagram
 * [FastMCP](https://gofastmcp.com/)
 * [MCP Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
 * [UV package manager](https://docs.astral.sh/uv/)
+* [Graphiti](https://www.getzep.com/product/open-source/)
+* [Neo4J](https://neo4j.com/)

@@ -1,6 +1,9 @@
 
+import asyncio
 from dotenv import load_dotenv
 from pathlib import Path
+
+from graphiti import close_graphiti
 
 # Some of packages require a .env file to be loaded
 dotenv_path = Path(__file__).resolve().parent.parent / ".env"
@@ -19,11 +22,15 @@ mcp = FastMCP(
 
 register_tools(mcp)
 
-
 if __name__ == "__main__":
-    mcp.run(
-        transport="streamable-http",
-        host="0.0.0.0",
-        port=8000,
-        path="/"
-    )
+    try:
+        mcp.run(
+            transport="streamable-http",
+            host="0.0.0.0",
+            port=8000,
+            path="/"
+        )
+    finally:
+        print("Closing graphiti connection")
+        asyncio.run(close_graphiti())
+        print("Graphiti connection closed")
